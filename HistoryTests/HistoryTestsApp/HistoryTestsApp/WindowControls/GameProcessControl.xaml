@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="HistoryTestsApp.WindowControls.GameProcessControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HistoryTestsApp.WindowControls"
+             xmlns:userControls="clr-namespace:HistoryTestsApp.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Background>
+        <ImageBrush ImageSource="../Resources/фон(нова гра).png"/>
+    </UserControl.Background>
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+        <Image Source="../Resources/a5b20250-03dc-4372-8ffe-574433310769.png" HorizontalAlignment="Left" 
+               Grid.Row="0" Grid.RowSpan="2"/>
+        <Grid Grid.Row="1" Name="Layout"/>
+    </Grid>
+</UserControl>

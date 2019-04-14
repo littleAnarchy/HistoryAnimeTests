@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9c177d56-0a89-43da-ab7a-c13dc17a104d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Servise.Tset/Service1/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7a6ee23d-a265-4429-8782-d9b4ad4ac0a8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Servise.Tset/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3a5e1159-222e-4570-9492-7178ff31eab8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Servise.Tset/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="33aeb363-bb3f-465c-aa00-c01de33ee097" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Servise.Tset/Service1/mex" />
+    <MetadataFile FileName="Servise.Tset.xsd" MetadataType="Schema" ID="8ef1895e-2953-46be-89c2-d55fab301846" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Servise.Tset/Service1/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
