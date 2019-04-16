@@ -194,7 +194,7 @@
                             x:Name="Border"
                             CornerRadius="2"
                             BorderThickness="0"
-                            Opacity="0.85">
+                            Opacity="{TemplateBinding Opacity}">
                         <Border.Background>
                             <ImageBrush ImageSource="Resources/3e8551fb-6f37-4f91-be29-433261fd9018.png"/>
                         </Border.Background>
@@ -233,7 +233,7 @@
                             x:Name="Border"
                             CornerRadius="2"
                             BorderThickness="0"
-                            Opacity="0.85">
+                            Opacity="{TemplateBinding Opacity}">
                         <Border.Background>
                             <ImageBrush ImageSource="Resources/8b98c581-9508-4a1e-9eee-2b2f49f91843.png"/>
                         </Border.Background>

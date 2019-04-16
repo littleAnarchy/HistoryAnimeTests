@@ -11,6 +11,6 @@ namespace HistoryTestsApp.Models
 
         public string[] Answerts { get; set; } = new string[4];
 
-        public byte[] CorrectIndexes { get; set; } = new byte[4];
+        public bool[] CorrectIndexes { get; set; } = new bool[4];
     }
 }

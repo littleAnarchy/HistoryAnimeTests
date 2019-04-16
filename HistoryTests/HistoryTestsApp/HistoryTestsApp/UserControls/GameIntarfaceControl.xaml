@@ -5,11 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HistoryTestsApp.UserControls"
              xmlns:viewModels="clr-namespace:HistoryTestsApp.ViewModels"
+             xmlns:converters="clr-namespace:HistoryTestsApp.Converters"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <viewModels:GameViewModel/>
     </UserControl.DataContext>
+    <UserControl.Resources>
+        <converters:BooleanToOpacityConverter x:Key="BooleanToOpacityConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -40,18 +45,38 @@
                 </Grid.RowDefinitions>
                 <Button Grid.Row="0" FontFamily="Gabriola" Foreground="AliceBlue" 
                         Grid.Column="0" Content="{Binding CurrentQuestion.Answerts[0]}" Style="{StaticResource LeftGameButton}"
-                        FontSize="32"/>
+                        FontSize="32" Opacity="{Binding SelectedAnswerIndexes[0], Converter={StaticResource BooleanToOpacityConverter}, UpdateSourceTrigger=PropertyChanged}"
+                        Command="{Binding SelectAnswerCommand}">
+                    <Button.CommandParameter>
+                        <system:Int32>0</system:Int32>
+                    </Button.CommandParameter>
+                </Button>
                 <Button Grid.Row="1" FontFamily="Gabriola" Foreground="AliceBlue" 
                         Grid.Column="0" Content="{Binding CurrentQuestion.Answerts[1]}" Style="{StaticResource LeftGameButton}"
-                        FontSize="32"/>
+                        FontSize="32" Opacity="{Binding SelectedAnswerIndexes[1], Converter={StaticResource BooleanToOpacityConverter}, UpdateSourceTrigger=PropertyChanged}"
+                        Command="{Binding SelectAnswerCommand}">
+                    <Button.CommandParameter>
+                        <system:Int32>1</system:Int32>
+                    </Button.CommandParameter>
+                </Button>
                 <Button Grid.Row="0" FontFamily="Gabriola" Foreground="AliceBlue" 
                         Grid.Column="1" Content="{Binding CurrentQuestion.Answerts[2]}" Style="{StaticResource RightGameButton}"
-                        FontSize="32"/>
+                        FontSize="32" Opacity="{Binding SelectedAnswerIndexes[2], Converter={StaticResource BooleanToOpacityConverter}, UpdateSourceTrigger=PropertyChanged}"
+                        Command="{Binding SelectAnswerCommand}">
+                    <Button.CommandParameter>
+                        <system:Int32>2</system:Int32>
+                    </Button.CommandParameter>
+                </Button>
                 <Button Grid.Row="1" FontFamily="Gabriola" Foreground="AliceBlue" 
                         Grid.Column="1" Content="{Binding CurrentQuestion.Answerts[3]}" Style="{StaticResource RightGameButton}"
-                        FontSize="32"/>
+                        FontSize="32" Opacity="{Binding SelectedAnswerIndexes[3], Converter={StaticResource BooleanToOpacityConverter}, UpdateSourceTrigger=PropertyChanged}"
+                        Command="{Binding SelectAnswerCommand}">
+                    <Button.CommandParameter>
+                        <system:Int32>3</system:Int32>
+                    </Button.CommandParameter>
+                </Button>
                 <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"  Style="{StaticResource HelpButton}" Width="200"/>
-                <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" Style="{StaticResource AllowAnswerButton}" Width="200"/>
+                <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" Style="{StaticResource AllowAnswerButton}" Width="200" Command="{Binding GetNextQuestionCommand}"/>
             </Grid>
         </Grid>
     </Grid>
