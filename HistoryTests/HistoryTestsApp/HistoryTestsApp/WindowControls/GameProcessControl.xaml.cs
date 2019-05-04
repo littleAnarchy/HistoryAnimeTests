@@ -13,6 +13,7 @@ namespace HistoryTestsApp.WindowControls
     public partial class GameProcessControl : UserControl
     {
         private readonly SubjectType _type;
+        private GameViewModel _gameViewModel;
 
         public GameProcessControl(SubjectType type)
         {
@@ -26,10 +27,17 @@ namespace HistoryTestsApp.WindowControls
         private void OnDialogEnd(object sender, EventArgs args)
         {
             Layout.Children.Clear();
-            Layout.Children.Add(new GameIntarfaceControl(new GameViewModel(_type)));
+            _gameViewModel = new GameViewModel(_type);
+            _gameViewModel.GameEnded += OnGameEnded;
+            Layout.Children.Add(new GameIntarfaceControl(_gameViewModel));
 
             MainGrid.RowDefinitions[0].Height = new GridLength(0.5, GridUnitType.Star);
             MainGrid.RowDefinitions[1].Height = new GridLength(0.5, GridUnitType.Star);
+        }
+
+        private void OnGameEnded(object sender, int score)
+        {
+            FrameContentController.Instance.SetMainWindowFrameContent(new FinalControl());
         }
     }
 }

@@ -41,6 +41,12 @@
     <Reference Include="DynamicData, Version=6.8.0.2561, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamicData.6.8.0.2561\lib\net46\DynamicData.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1345, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -93,11 +99,15 @@
     <Compile Include="FrameContentController.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Options.cs" />
+    <Compile Include="PlayerController.cs" />
     <Compile Include="UserControls\DialogControl.xaml.cs">
       <DependentUpon>DialogControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\GameIntarfaceControl.xaml.cs">
       <DependentUpon>GameIntarfaceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HelpUserControl.xaml.cs">
+      <DependentUpon>HelpUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\VisualNovelTextBox.xaml.cs">
       <DependentUpon>VisualNovelTextBox.xaml</DependentUpon>
@@ -105,17 +115,24 @@
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\DialogViewModel.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="WindowControls\AdminControl.xaml.cs">
       <DependentUpon>AdminControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowControls\AdminShellControl.xaml.cs">
       <DependentUpon>AdminShellControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowControls\FinalControl.xaml.cs">
+      <DependentUpon>FinalControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowControls\GameMenuTwoControl.xaml.cs">
       <DependentUpon>GameMenuTwoControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowControls\GameProcessControl.xaml.cs">
       <DependentUpon>GameProcessControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControls\LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowControls\MainMenuControl.xaml.cs">
       <DependentUpon>MainMenuControl.xaml</DependentUpon>
@@ -144,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\HelpUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\VisualNovelTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,11 +177,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WindowControls\FinalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowControls\GameMenuTwoControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowControls\GameProcessControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowControls\LoginControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +261,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\рамока_диалога2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\06f22242-8a3c-4350-91ca-39c0ff841e48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\59034c70-dc16-4e2e-b845-cbdbf8cb6208.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\d87cdbe3-906c-447a-a6af-1da04d7b69e1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\94dc8430-fe0f-4c54-a216-2e24b5a0d523.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\99365b84-0000-4cb1-80db-228b3a8eff13.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

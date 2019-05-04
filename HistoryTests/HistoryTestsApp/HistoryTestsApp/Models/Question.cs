@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
@@ -12,5 +13,7 @@ namespace HistoryTestsApp.Models
         public string[] Answerts { get; set; } = new string[4];
 
         public bool[] CorrectIndexes { get; set; } = new bool[4];
+
+        public string Helps { get; set; }
     }
 }

@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="HistoryTestsApp.UserControls.HelpUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HistoryTestsApp.UserControls"
+             xmlns:viewModels="clr-namespace:HistoryTestsApp.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400"
+             d:DataContext="{d:DesignInstance viewModels:GameViewModel, IsDesignTimeCreatable = False}">
+    <UserControl.Background>
+        <ImageBrush ImageSource="../Resources/94dc8430-fe0f-4c54-a216-2e24b5a0d523.png"/>
+    </UserControl.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="НАЗВА БОМЖА"
+               Foreground="OrangeRed"
+               FontSize="40"
+               Padding="80,0,30,10"
+               FontFamily="Gabriola"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               FontWeight="Bold">
+            <Label.Background>
+                <ImageBrush ImageSource="../Resources/99365b84-0000-4cb1-80db-228b3a8eff13.png"/>
+            </Label.Background>
+        </Label>
+    </Grid>
+</UserControl>

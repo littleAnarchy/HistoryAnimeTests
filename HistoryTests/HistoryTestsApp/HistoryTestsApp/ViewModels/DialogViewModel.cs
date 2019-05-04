@@ -22,7 +22,7 @@ namespace HistoryTestsApp.ViewModels
                     NPCName = "Помічниця Сатрапа";
                     AnimeText = new List<string>()
                     {
-                        "Привіт, [username]! Мене попросили бути твоїм властеліном сьогодні. \n" +
+                        $"Привіт, {PlayerController.Instance.PlayerName}! Мене попросили бути твоїм властеліном сьогодні. \n" +
                         "Готовий до веселих та повних болі вселенських мук питань?"
                     };
                     break;

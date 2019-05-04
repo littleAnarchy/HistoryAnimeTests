@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HistoryTestsApp.WindowControls"
              xmlns:userControls="clr-namespace:HistoryTestsApp.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Background>
@@ -17,6 +18,8 @@
         </Grid.RowDefinitions>
         <Image Source="../Resources/a5b20250-03dc-4372-8ffe-574433310769.png" HorizontalAlignment="Left" 
                Grid.Row="0" Grid.RowSpan="2"/>
+        <userControls:HelpUserControl Grid.Row="0" HorizontalAlignment="Right"
+                                      Margin="20,120,300,-120"/>
         <Grid Grid.Row="1" Name="Layout"/>
     </Grid>
 </UserControl>

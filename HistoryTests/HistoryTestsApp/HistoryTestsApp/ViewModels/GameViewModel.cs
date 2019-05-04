@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace HistoryTestsApp.ViewModels
     {
         private readonly string _filePath;
         private int _questionIndex;
+
+        public event EventHandler<int> GameEnded;
 
         public ICommand SelectAnswerCommand { get; }
         public ICommand GetNextQuestionCommand { get; }
@@ -79,7 +82,7 @@ namespace HistoryTestsApp.ViewModels
 
             if (Questions.Count <= _questionIndex)
             {
-                MessageBox.Show($"End game! Score {Score}");
+                GameEnded?.Invoke(this, Score);
                 return;
             }
 

@@ -26,6 +26,7 @@
                 <DataGridCheckBoxColumn Binding="{Binding CorrectIndexes[2]}"/>
                 <DataGridTextColumn Header="Відповідь 4" Binding="{Binding Answerts[3]}"/>
                 <DataGridCheckBoxColumn Binding="{Binding CorrectIndexes[3]}"/>
+                <DataGridTextColumn Header="Звінок другу" Binding="{Binding Helps}"/>
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu>
@@ -46,6 +47,8 @@
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="5">
                 <Label Content="Тескт питання:"/>
                 <TextBox Width="200" Text="{Binding NewQuestion.QuestionText}"/>
+                <Label Content="Звінок другу (розділяти ;):"/>
+                <TextBox Width="200" Text="{Binding NewQuestion.Helps}"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="5">
                 <Label Content="Варіант 1:"/>
