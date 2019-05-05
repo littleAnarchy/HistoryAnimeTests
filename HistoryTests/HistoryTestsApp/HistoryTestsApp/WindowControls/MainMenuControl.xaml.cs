@@ -18,6 +18,11 @@ namespace HistoryTestsApp.WindowControls
             FrameContentController.Instance.SetMainWindowFrameContent(new GameMenuTwoControl());
         }
 
+        private void EnciclopedyOnClick(object sender, RoutedEventArgs e)
+        {
+            FrameContentController.Instance.SetMainWindowFrameContent(new EnciclopedyControl());
+        }
+
         private void OnEditButtonClick(object sender, RoutedEventArgs e)
         {
             FrameContentController.Instance.SetMainWindowFrameContent(new AdminShellControl());

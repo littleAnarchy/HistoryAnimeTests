@@ -27,7 +27,7 @@ namespace HistoryTestsApp
             Initialize();
             FrameContentController.Instance.ChangeFrameContent += OnFrameContentChange;
             WindowState = WindowState.Maximized;
-            //WindowStyle = WindowStyle.None;
+            WindowStyle = WindowStyle.None;
         }
 
         private void Initialize()

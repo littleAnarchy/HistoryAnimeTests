@@ -20,6 +20,25 @@ namespace HistoryTestsApp.UserControls
         public static readonly DependencyProperty OutputIntervalProperty = DependencyProperty.Register(
             nameof(OutputInterval), typeof(double), typeof(VisualNovelTextBox), new PropertyMetadata(40.0));
 
+        private bool _isNormalLineStrategy;
+
+        public event EventHandler TextPushingEnded;
+
+        public bool IsNormaLineStrategy
+        {
+            get => _isNormalLineStrategy;
+            set
+            {
+                if (value)
+                {
+                    VisualMessage.LineStackingStrategy = LineStackingStrategy.BlockLineHeight;
+                    VisualMessage.LineHeight = 30;
+                }
+
+                _isNormalLineStrategy = value;
+            }
+        }
+
         public double OutputInterval
         {
             get => (double) GetValue(OutputIntervalProperty);
@@ -40,6 +59,7 @@ namespace HistoryTestsApp.UserControls
                 _timer.Stop();
                 _index = 0;
                 IsPushed = false;
+                TextPushingEnded?.Invoke(this, null);
                 return;
             }
 
@@ -53,6 +73,7 @@ namespace HistoryTestsApp.UserControls
             _index = 0;
             IsPushed = false;
             VisualMessage.Text = message;
+            TextPushingEnded?.Invoke(this, null);
         }
 
         public void PushMessage(string message)

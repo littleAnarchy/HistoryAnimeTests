@@ -7,7 +7,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock Name="VisualMessage" Foreground="AliceBlue"
-                   HorizontalAlignment="Left" Padding="40" VerticalAlignment="Center" FontFamily="Gabriola"
-                   FontSize="36"/>
+                   HorizontalAlignment="Left" Padding="40" VerticalAlignment="Top" FontFamily="Gabriola"
+                   FontSize="36" TextWrapping="Wrap" />
     </Grid>
 </UserControl>

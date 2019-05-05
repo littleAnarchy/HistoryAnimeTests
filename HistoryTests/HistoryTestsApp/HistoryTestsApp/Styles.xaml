@@ -135,6 +135,50 @@
         </Setter>
     </Style>
 
+    <Style TargetType="{x:Type Button}" x:Key="LoginButtonStyle">
+        <Setter Property="FontFamily" Value="/HistoryTestsApp;component/Resources/#Romic"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="Goldenrod"></Setter>
+        <Setter Property="SnapsToDevicePixels"
+          Value="true" />
+        <Setter Property="OverridesDefaultStyle"
+          Value="true" />
+        <Setter Property="FocusVisualStyle"
+          Value="{StaticResource ButtonFocusVisual}" />
+        <Setter Property="MinHeight"
+          Value="23" />
+        <Setter Property="MinWidth"
+          Value="75" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}"
+                            x:Name="Border"
+                            CornerRadius="2"
+                            BorderThickness="0"
+                            Opacity="0.85"
+                            Padding="75,20">
+                        <Border.Background>
+                            <ImageBrush ImageSource="Resources/0bedfba1-e225-4669-a785-b2e75ef38717.png"/>
+                        </Border.Background>
+                        <ContentPresenter Margin="2"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style TargetType="{x:Type Button}" x:Key="ButtonBack">
         <Setter Property="FontFamily" Value="/HistoryTestsApp;component/Resources/#Romic"/>
         <Setter Property="FontSize" Value="24"/>
@@ -204,9 +248,6 @@
                                           RecognizesAccessKey="True" />
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Opacity" Value="0.7"/>
-                        </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Opacity" Value="1"/>
                         </Trigger>
@@ -243,9 +284,6 @@
                                           RecognizesAccessKey="True" />
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Opacity" Value="0.7"/>
-                        </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Opacity" Value="1"/>
                         </Trigger>

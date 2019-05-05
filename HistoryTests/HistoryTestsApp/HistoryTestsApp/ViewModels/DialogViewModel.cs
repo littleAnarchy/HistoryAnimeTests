@@ -19,16 +19,26 @@ namespace HistoryTestsApp.ViewModels
             switch (type)
             {
                 case SubjectType.Subject1:
+                    NPCName = "Цнотлива монашка";
+                    AnimeText = new List<string>()
+                    {
+                        $"хник-хник-хник... \n {PlayerController.Instance.PlayerName}, ти тільки не тупи, будь ласка."
+                    };
+                    break;
+                case SubjectType.Subject2:
                     NPCName = "Помічниця Сатрапа";
                     AnimeText = new List<string>()
                     {
                         $"Привіт, {PlayerController.Instance.PlayerName}! Мене попросили бути твоїм властеліном сьогодні. \n" +
-                        "Готовий до веселих та повних болі вселенських мук питань?"
+                        "Готовий до веселих та повних болі та вселенських мук питань?"
                     };
                     break;
-                case SubjectType.Subject2:
-                    break;
                 case SubjectType.Subject3:
+                    NPCName = "Ісус";
+                    AnimeText = new List<string>()
+                    {
+                        $"Здраствуй, сину мій, {PlayerController.Instance.PlayerName}. Коли ти останній раз ходив до церкви?"
+                    };
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);

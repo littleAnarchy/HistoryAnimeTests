@@ -7,29 +7,52 @@
              xmlns:viewModels="clr-namespace:HistoryTestsApp.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400"
-             d:DataContext="{d:DesignInstance viewModels:GameViewModel, IsDesignTimeCreatable = False}">
+             d:DataContext="{d:DesignInstance viewModels:GameViewModel, IsDesignTimeCreatable = False}"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,200,200">
     <UserControl.Background>
-        <ImageBrush ImageSource="../Resources/94dc8430-fe0f-4c54-a216-2e24b5a0d523.png"/>
+        <ImageBrush ImageSource="../Resources/382c6837-2805-49be-98af-b8154f7d4ce6.png"/>
     </UserControl.Background>
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="НАЗВА БОМЖА"
-               Foreground="OrangeRed"
-               FontSize="40"
-               Padding="80,0,30,10"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Margin="20"
+               Content="НАЗВА БОМЖА"
+               Foreground="DarkGoldenrod"
+               FontSize="36"
+               Padding="80,5,30,10"
                FontFamily="Gabriola"
                HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
-               FontWeight="Bold">
+               FontWeight="Bold"
+               Name="HelperName">
             <Label.Background>
                 <ImageBrush ImageSource="../Resources/99365b84-0000-4cb1-80db-228b3a8eff13.png"/>
             </Label.Background>
         </Label>
+        <local:VisualNovelTextBox Grid.Row="1"
+                                  Grid.RowSpan="2"
+                                  Grid.Column="0"
+                                  x:Name="HelpText"
+                                  Foreground="OrangeRed"
+                                  VerticalAlignment="Top"
+                                  FontSize="40"
+                                  FontFamily="Gabriola"
+                                  Padding="20,0,0,10"/>
+        <Image Name="HelperImage" Grid.Row="1" Grid.Column="1" Source="../Resources/783_v9_ba.jpg" Margin="40" Stretch="Fill">
+            <Image.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" Direction="-90" ShadowDepth="0.5" Opacity="0.7"/>
+            </Image.Effect>
+        </Image>
     </Grid>
 </UserControl>

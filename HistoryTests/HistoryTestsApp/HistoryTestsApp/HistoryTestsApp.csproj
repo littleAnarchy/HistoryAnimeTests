@@ -95,6 +95,7 @@
     </ApplicationDefinition>
     <Compile Include="CommandHandler.cs" />
     <Compile Include="Converters\BooleanToOpacityConverter.cs" />
+    <Compile Include="Enums\HelperType.cs" />
     <Compile Include="Enums\SubjectType.cs" />
     <Compile Include="FrameContentController.cs" />
     <Compile Include="Models\Question.cs" />
@@ -121,6 +122,9 @@
     </Compile>
     <Compile Include="WindowControls\AdminShellControl.xaml.cs">
       <DependentUpon>AdminShellControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControls\EnciclopedyControl.xaml.cs">
+      <DependentUpon>EnciclopedyControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowControls\FinalControl.xaml.cs">
       <DependentUpon>FinalControl.xaml</DependentUpon>
@@ -174,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowControls\AdminShellControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowControls\EnciclopedyControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -272,10 +280,63 @@
     <Resource Include="Resources\d87cdbe3-906c-447a-a6af-1da04d7b69e1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\94dc8430-fe0f-4c54-a216-2e24b5a0d523.png" />
+    <Resource Include="Resources\99365b84-0000-4cb1-80db-228b3a8eff13.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\99365b84-0000-4cb1-80db-228b3a8eff13.png" />
+    <Resource Include="Resources\382c6837-2805-49be-98af-b8154f7d4ce6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\c3609ba5-2733-46be-b1da-84cde7a9c275.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3a091c7b-9dcc-4494-b7db-a709903689e8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\783_v9_ba.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\f6e054ea-0f98-4114-8ef0-79ca62b09e55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\c0dbf079-cd6a-4f5f-92e5-b884395d7fd4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\61693ef6-f013-4821-80bc-fd3cd5afbfc4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\0bedfba1-e225-4669-a785-b2e75ef38717.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\358c815b-2a68-4598-b054-9c088627d816.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\9f14ab62-2be1-4a31-867a-c8ef32fad2e2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\577288bb-47fa-41cf-a20e-f59b6b0b7dde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\d5a6d9e8-e00f-4255-bcf1-0492482a7660.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\d8328794-102f-4d3f-adbd-3e633ba7153f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\57cd9850-9a76-4ba5-8f0b-8f6ece9742fe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\c0cf9c50-e1ea-4dbc-a552-3dbbd202f85f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\79f08ded-e54e-4956-b829-4fa39d27fb7b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\b573672e-37d0-46fa-b7c3-eb2a2bc4855e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Enciclopedi.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

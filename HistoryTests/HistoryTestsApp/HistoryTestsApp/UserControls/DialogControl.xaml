@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:HistoryTestsApp.UserControls"
              xmlns:viewModels="clr-namespace:HistoryTestsApp.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" MouseLeftButtonDown="DialogControl_OnMouseLeftButtonDown">
+             d:DesignHeight="450" d:DesignWidth="800" MouseLeftButtonDown="DialogControl_OnMouseLeftButtonDown" VerticalAlignment="Bottom">
     <UserControl.DataContext>
         <viewModels:DialogViewModel/>
     </UserControl.DataContext>

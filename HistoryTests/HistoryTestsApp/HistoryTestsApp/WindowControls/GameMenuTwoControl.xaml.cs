@@ -31,6 +31,16 @@ namespace HistoryTestsApp.WindowControls
             FrameContentController.Instance.SetMainWindowFrameContent(new GameProcessControl(SubjectType.Subject1));
         }
 
+        private void OnSubject2Open(object sender, RoutedEventArgs e)
+        {
+            FrameContentController.Instance.SetMainWindowFrameContent(new GameProcessControl(SubjectType.Subject2));
+        }
+        private void OnSubject3Open(object sender, RoutedEventArgs e)
+        {
+            FrameContentController.Instance.SetMainWindowFrameContent(new GameProcessControl(SubjectType.Subject3));
+        }
+
+
         private void OnButtonBackClick(object sender, RoutedEventArgs e)
         {
             FrameContentController.Instance.SetMainWindowFrameContent(new MainMenuControl());

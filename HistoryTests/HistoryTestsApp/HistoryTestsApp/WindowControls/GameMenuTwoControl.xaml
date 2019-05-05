@@ -17,8 +17,8 @@
         <Button Grid.Row="0" Style="{StaticResource ButtonBack}" HorizontalAlignment="Left" Click="OnButtonBackClick"/>
             <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                 <Button Content="Історія освіти" Click="OnSubject1Open"/>
-                <Button Content="ІСЦ / ІАЦ"/>
-                <Button Content="Всяка фігня"/>
+            <Button Content="ІСЦ / ІАЦ" Click="OnSubject2Open"/>
+            <Button Content="Всяка фігня" Click="OnSubject3Open"/>
         </StackPanel>
     </Grid>
 </UserControl>
