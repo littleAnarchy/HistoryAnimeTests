@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" Name="ThisControl"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Name="VisualMessage" Foreground="AliceBlue"
-                   HorizontalAlignment="Left" Padding="40" VerticalAlignment="Top" FontFamily="Gabriola"
-                   FontSize="36" TextWrapping="Wrap" />
+        <Viewbox StretchDirection="DownOnly" Stretch="Uniform">
+            <TextBlock Name="VisualMessage" Foreground="AliceBlue" FontFamily="Gabriola"
+                       TextWrapping="Wrap" Width="{Binding ElementName=ThisControl, Path=ActualWidth, Mode=OneWay}"/>
+        </Viewbox>
     </Grid>
 </UserControl>

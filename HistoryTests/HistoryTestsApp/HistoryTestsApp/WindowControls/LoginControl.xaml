@@ -11,83 +11,126 @@
         <viewModels:LoginViewModel/>
     </UserControl.DataContext>
     <UserControl.Background>
-        <ImageBrush ImageSource="../Resources/фон(головне меню) (1).png"></ImageBrush>
+        <ImageBrush ImageSource="../Resources/фон(головне меню) (1).png"/>
     </UserControl.Background>
     <Grid>
-        <Border Width="1200" Height="600">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.8*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="1" Grid.Column="1">
             <Border.Background>
                 <ImageBrush ImageSource="../Resources/f6e054ea-0f98-4114-8ef0-79ca62b09e55.png"/>
             </Border.Background>
-            <StackPanel>
-                <Label Content="Введіть ваше ім'я" 
-                       HorizontalAlignment="Center" Margin="50,75,50,25" 
-                       FontSize="64" Padding="300,40,300,40"
-                       FontFamily="Gabriola"
-                       Foreground="DarkGoldenrod"
-                       FontWeight="Bold">
-                    <Label.Background>
-                        <ImageBrush ImageSource="../Resources/c0dbf079-cd6a-4f5f-92e5-b884395d7fd4.png"/>
-                    </Label.Background>
-                </Label>
-                <TextBox Width="800" Height="100" Text="{Binding NickName}"
-                         FontFamily="Gabriola"
-                         FontSize="40" 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="0.8*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="1"  Margin="0,25,0,0">
+                        <Border.Background>
+                            <ImageBrush ImageSource="../Resources/c0dbf079-cd6a-4f5f-92e5-b884395d7fd4.png"/>
+                        </Border.Background>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Grid.Column="1"
+                                Stretch="Uniform" VerticalAlignment="Center">
+                                <Label
+                                    Content="Введіть ваше ім'я" 
+                                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                                    FontFamily="Gabriola"
+                                    Foreground="DarkGoldenrod"
+                                    FontWeight="Bold">
+
+                                </Label>
+                            </Viewbox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition Width="0.2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="1"
+                    Height="100" Text="{Binding NickName}"
+                         FontFamily="Gabriola" FontSize="64"
                          Foreground="DarkGoldenrod"
                          BorderThickness="0,0,0,1"
                          TextAlignment="Center"
                           CaretBrush="DarkGoldenrod"
-                         Padding="15">
-                    <TextBox.Template>
-                        <ControlTemplate TargetType="{x:Type TextBoxBase}">
-                            <Border Name="Border"
+                         Margin="0" Padding="5">
+                        <TextBox.Template>
+                            <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                                <Border Name="Border"
                 CornerRadius="2"
                 Padding="2"
                 BorderThickness="0">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="../Resources/61693ef6-f013-4821-80bc-fd3cd5afbfc4.png"/>
-                                </Border.Background>
-                                <Border.BorderBrush>
-                                    <SolidColorBrush Color="{DynamicResource BorderMediumColor}" />
-                                </Border.BorderBrush>
-                                <VisualStateManager.VisualStateGroups>
-                                    <VisualStateGroup x:Name="CommonStates">
-                                        <VisualState x:Name="Normal" />
-                                        <VisualState x:Name="Disabled">
-                                            <Storyboard>
-                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="../Resources/61693ef6-f013-4821-80bc-fd3cd5afbfc4.png"/>
+                                    </Border.Background>
+                                    <Border.BorderBrush>
+                                        <SolidColorBrush Color="{DynamicResource BorderMediumColor}" />
+                                    </Border.BorderBrush>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).
                     (SolidColorBrush.Color)">
-                                                    <EasingColorKeyFrame KeyTime="0"
+                                                        <EasingColorKeyFrame KeyTime="0"
                                          Value="{StaticResource DisabledControlLightColor}" />
-                                                </ColorAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualState>
-                                        <VisualState x:Name="ReadOnly">
-                                            <Storyboard>
-                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                    </ColorAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="ReadOnly">
+                                                <Storyboard>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).
                     (SolidColorBrush.Color)">
-                                                    <EasingColorKeyFrame KeyTime="0"
+                                                        <EasingColorKeyFrame KeyTime="0"
                                          Value="{StaticResource DisabledControlDarkColor}" />
-                                                </ColorAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualState>
-                                        <VisualState x:Name="MouseOver" />
-                                    </VisualStateGroup>
-                                </VisualStateManager.VisualStateGroups>
-                                <ScrollViewer Margin="0"
+                                                    </ColorAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="MouseOver" />
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <ScrollViewer Margin="0"
                         x:Name="PART_ContentHost" />
-                            </Border>
-                        </ControlTemplate>
-                    </TextBox.Template>
-                </TextBox>
-                <Button Content="Продовжити" 
+                                </Border>
+
+                            </ControlTemplate>
+                        </TextBox.Template>
+                    </TextBox>
+                </Grid>
+                <Button Grid.Row="2" VerticalAlignment="Center" Margin="0,0,0,50"
+                    Content="Продовжити" 
                         Style="{StaticResource LoginButtonStyle}" 
                         Command="{Binding LoginCommand}"
                         HorizontalAlignment="Center"
-                        FontSize="36"
-                        Margin="50"/>
-            </StackPanel>
+                        FontSize="36"/>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>

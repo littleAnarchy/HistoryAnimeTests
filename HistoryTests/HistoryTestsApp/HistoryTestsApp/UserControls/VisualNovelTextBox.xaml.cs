@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Runtime.InteropServices;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +20,8 @@ namespace HistoryTestsApp.UserControls
 
         public static readonly DependencyProperty OutputIntervalProperty = DependencyProperty.Register(
             nameof(OutputInterval), typeof(double), typeof(VisualNovelTextBox), new PropertyMetadata(40.0));
+
+        public static readonly DependencyProperty TextWidthProperty = DependencyProperty.Register(nameof(TextWidth), typeof(double), typeof(VisualNovelTextBox), new PropertyMetadata(100.0));
 
         private bool _isNormalLineStrategy;
 
@@ -45,6 +48,12 @@ namespace HistoryTestsApp.UserControls
             set => SetValue(OutputIntervalProperty, value);
         }
 
+        public double TextWidth
+        {
+            get => (double) GetValue(TextWidthProperty);
+            set => SetValue(TextWidthProperty, value);
+        }
+
         public VisualNovelTextBox()
         {
             InitializeComponent();
@@ -63,8 +72,10 @@ namespace HistoryTestsApp.UserControls
                 return;
             }
 
+            _timer.Stop();
             Dispatcher.Invoke(() => VisualMessage.Text += _inputText[_index]);
             _index++;
+            _timer.Start();
         }
 
         public void PushMessageImmidiatly(string message)

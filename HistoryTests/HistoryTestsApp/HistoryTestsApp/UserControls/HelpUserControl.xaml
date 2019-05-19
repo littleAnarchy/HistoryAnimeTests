@@ -8,48 +8,57 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400"
              d:DataContext="{d:DesignInstance viewModels:GameViewModel, IsDesignTimeCreatable = False}"
-             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,200,200">
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
     <UserControl.Background>
-        <ImageBrush ImageSource="../Resources/382c6837-2805-49be-98af-b8154f7d4ce6.png"/>
+        <ImageBrush ImageSource="../Resources/382c6837-2805-49be-98af-b8154f7d4ce6.png" />
     </UserControl.Background>
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0"
-               Grid.ColumnSpan="2"
-               Margin="20"
-               Content="НАЗВА БОМЖА"
-               Foreground="DarkGoldenrod"
-               FontSize="36"
-               Padding="80,5,30,10"
-               FontFamily="Gabriola"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Top"
-               FontWeight="Bold"
-               Name="HelperName">
-            <Label.Background>
-                <ImageBrush ImageSource="../Resources/99365b84-0000-4cb1-80db-228b3a8eff13.png"/>
-            </Label.Background>
-        </Label>
+        <Grid Grid.Column="0"
+              Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.6*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1">
+                <Border.Background>
+                    <ImageBrush ImageSource="../Resources/99365b84-0000-4cb1-80db-228b3a8eff13.png"/>
+                </Border.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Column="1" Stretch="Uniform">
+                        <Label 
+                               Content="НАЗВА БОМЖА"
+                               Foreground="DarkGoldenrod"
+                               FontFamily="Gabriola"
+                               FontWeight="Bold"
+                               Name="HelperName"/>
+                    </Viewbox>
+                </Grid>
+            </Border>
+        </Grid>
         <local:VisualNovelTextBox Grid.Row="1"
                                   Grid.RowSpan="2"
                                   Grid.Column="0"
                                   x:Name="HelpText"
-                                  Foreground="OrangeRed"
                                   VerticalAlignment="Top"
                                   FontSize="40"
                                   FontFamily="Gabriola"
-                                  Padding="20,0,0,10"/>
-        <Image Name="HelperImage" Grid.Row="1" Grid.Column="1" Source="../Resources/783_v9_ba.jpg" Margin="40" Stretch="Fill">
+                                  Margin="30,0,0,0"/>
+        <Image Name="HelperImage" Grid.Row="1" Grid.Column="1" Source="../Resources/783_v9_ba.jpg" Margin="0,0,40,0" Stretch="Fill">
             <Image.Effect>
                 <DropShadowEffect Color="Black" BlurRadius="20" Direction="-90" ShadowDepth="0.5" Opacity="0.7"/>
             </Image.Effect>

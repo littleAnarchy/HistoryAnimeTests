@@ -222,7 +222,6 @@
 
     <Style TargetType="{x:Type Button}" x:Key="LeftGameButton">
         <Setter Property="FontFamily" Value="/HistoryTestsApp;component/Resources/#Romic"/>
-        <Setter Property="FontSize" Value="24"/>
         <Setter Property="Foreground" Value="Goldenrod"/>
         <Setter Property="SnapsToDevicePixels"
           Value="true" />
@@ -242,7 +241,7 @@
                         <Border.Background>
                             <ImageBrush ImageSource="Resources/3e8551fb-6f37-4f91-be29-433261fd9018.png"/>
                         </Border.Background>
-                        <ContentPresenter Margin="2"
+                        <ContentPresenter Margin="30,2"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           RecognizesAccessKey="True" />
@@ -259,7 +258,6 @@
 
     <Style TargetType="{x:Type Button}" x:Key="RightGameButton">
         <Setter Property="FontFamily" Value="/HistoryTestsApp;component/Resources/#Romic"/>
-        <Setter Property="FontSize" Value="24"/>
         <Setter Property="Foreground" Value="Goldenrod"/>
         <Setter Property="SnapsToDevicePixels"
           Value="true" />
@@ -278,7 +276,7 @@
                         <Border.Background>
                             <ImageBrush ImageSource="Resources/8b98c581-9508-4a1e-9eee-2b2f49f91843.png"/>
                         </Border.Background>
-                        <ContentPresenter Margin="2"
+                        <ContentPresenter Margin="30,2"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           RecognizesAccessKey="True" />

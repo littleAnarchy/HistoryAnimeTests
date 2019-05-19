@@ -15,9 +15,8 @@ namespace HistoryTestsApp.UserControls
     public partial class HelpUserControl : UserControl
     {
         private Timer _timer;
-        private double _currentTopMargin;
-        private double _topMargin;
-        private double _bottomMargin;
+        private double _currentHeight;
+        private double _toHeight;
         private bool _isMoved;
         private bool _isShow;
         private GameViewModel _viewModel;
@@ -49,16 +48,15 @@ namespace HistoryTestsApp.UserControls
             if (isShow)
             {
                 HelpText.PushMessageImmidiatly("");
-                _topMargin = 0;
-                _bottomMargin = 190;
+                _toHeight = (SystemParameters.PrimaryScreenHeight / 1.7);
+                Debug.WriteLine($"HelpControl _toHeight is: {_toHeight}");
             }
             else
             {
-                _topMargin = ActualHeight;
-                _bottomMargin = 200;
+                _toHeight = 0;
             }
 
-            _currentTopMargin = Margin.Top;
+            _currentHeight = ActualHeight;
             _timer.Start();
         }
 
@@ -75,19 +73,18 @@ namespace HistoryTestsApp.UserControls
             HelpText.TextPushingEnded += OnTextPushingEnded;
             _timer = new Timer(0.005);
             _timer.Elapsed += TimerOnElapsed;
-            Margin = new Thickness(0,750,200,250);
-            Debug.WriteLine($"Top: {Margin.Top}: Bottom: {Margin.Bottom}");
+            Height = 0;
         }
 
         private void TimerOnElapsed(object sender, ElapsedEventArgs e)
         {
             Dispatcher.Invoke(() =>
             {
-                if ((int)_currentTopMargin == (int)_topMargin)
+                if (IsResizedEnough())
                 {
                     _timer.Stop();
                     _isMoved = false;
-                    System.Diagnostics.Debug.WriteLine("Anime ended");
+                    Debug.WriteLine("Anime ended");
                     if (_isShow)
                         HelpText.PushMessage(_viewModel.HelpText);
                     else
@@ -95,18 +92,25 @@ namespace HistoryTestsApp.UserControls
                     return;
                 }
 
-                if (_currentTopMargin > _topMargin)
+                if (_currentHeight > _toHeight)
                 {
-                    _currentTopMargin -= 10;
+                    _currentHeight -= 10;
+                    if (_currentHeight < 0) _currentHeight = 0;
                 }
                 else
                 {
-                    _currentTopMargin += 10;
+                    _currentHeight += 10;
                 }
 
-                Margin = new Thickness(0, _currentTopMargin, 200, _bottomMargin);
-                System.Diagnostics.Debug.WriteLine($"Top: {Margin.Top}: Bottom: {Margin.Bottom}");
+                Height = _currentHeight;
+                Debug.WriteLine($"HelpControl Height: {Height}; ActualHeight: {ActualHeight}");
             });
+        }
+
+        private bool IsResizedEnough()
+        {
+            if (_isShow) return (int) _currentHeight >= (int) _toHeight;
+            return (int)_currentHeight <= (int)_toHeight;
         }
 
         private void OnTextPushingEnded(object sender, EventArgs args)

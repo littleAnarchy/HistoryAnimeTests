@@ -1,4 +1,5 @@
-﻿using System.Timers;
+﻿using System;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -74,28 +75,28 @@ namespace HistoryTestsApp.UserControls
                         if (_viewModel.SelectedAnswerIndexes[0])
                         {
                             Button1.Foreground = Brushes.Green;
-                            Button1.FontSize = 48;
+                            Button1.FontSize = 40;
                             Button1.FontWeight = FontWeights.Bold;
                         }
 
                         if (_viewModel.SelectedAnswerIndexes[1])
                         {
                             Button2.Foreground = Brushes.Green;
-                            Button2.FontSize = 48;
+                            Button2.FontSize = 40;
                             Button2.FontWeight = FontWeights.Bold;
                         }
 
                         if (_viewModel.SelectedAnswerIndexes[2])
                         {
                             Button3.Foreground = Brushes.Green;
-                            Button3.FontSize = 48;
+                            Button3.FontSize = 40;
                             Button3.FontWeight = FontWeights.Bold;
                         }
 
                         if (_viewModel.SelectedAnswerIndexes[3])
                         {
                             Button4.Foreground = Brushes.Green;
-                            Button4.FontSize = 48;
+                            Button4.FontSize = 40;
                             Button4.FontWeight = FontWeights.Bold;
                         }
                     }
@@ -104,28 +105,28 @@ namespace HistoryTestsApp.UserControls
                         if (_viewModel.SelectedAnswerIndexes[0])
                         {
                             Button1.Foreground = Brushes.Red;
-                            Button1.FontSize = 48;
+                            Button1.FontSize = 40;
                             Button1.FontWeight = FontWeights.Bold;
                         }
 
                         if (_viewModel.SelectedAnswerIndexes[1])
                         {
                             Button2.Foreground = Brushes.Red;
-                            Button2.FontSize = 48;
+                            Button2.FontSize = 40;
                             Button2.FontWeight = FontWeights.Bold;
                         }
 
                         if (_viewModel.SelectedAnswerIndexes[2])
                         {
                             Button3.Foreground = Brushes.Red;
-                            Button3.FontSize = 48;
+                            Button3.FontSize = 40;
                             Button3.FontWeight = FontWeights.Bold;
                         }
 
                         if (_viewModel.SelectedAnswerIndexes[3])
                         {
                             Button4.Foreground = Brushes.Red;
-                            Button4.FontSize = 48;
+                            Button4.FontSize = 40;
                             Button4.FontWeight = FontWeights.Bold;
                         }
                     }
