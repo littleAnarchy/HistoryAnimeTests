@@ -14,8 +14,8 @@ namespace HistoryTestsApp
             InitializeComponent();
             Initialize();
             FrameContentController.Instance.ChangeFrameContent += OnFrameContentChange;
-            //WindowState = WindowState.Maximized;
-            //WindowStyle = WindowStyle.None;
+            WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
         }
 
         private void Initialize()
